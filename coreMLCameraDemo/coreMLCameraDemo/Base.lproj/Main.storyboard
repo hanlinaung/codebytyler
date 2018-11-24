@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="coreMLCameraDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ifb-KJ-1JT">
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Image Tracker" id="QkX-tT-vmd">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="RAd-vf-4g2">
+                                            <connections>
+                                                <action selector="btSaveAction:" destination="BYZ-38-t0r" id="eOI-QN-wLy"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="PkP-lq-xlp" userLabel="ParentStack View">
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="defaultimage" translatesAutoresizingMaskIntoConstraints="NO" id="NVh-SF-dcC">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="522"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="AhS-9r-Iu8">
+                                        <rect key="frame" x="0.0" y="522" width="414" height="150"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UlD-Vh-T8J">
+                                                <rect key="frame" x="173.33333333333334" y="0.0" width="67.666666666666657" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="247" verticalCompressionResistancePriority="743" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PDk-oX-jQk">
+                                                <rect key="frame" x="159.66666666666666" y="20.333333333333378" width="95" height="99.666666666666686"/>
+                                                <state key="normal" title="Open Camera"/>
+                                                <connections>
+                                                    <action selector="btCameraAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9fb-N0-Xjt"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S97-CG-dsf">
+                                                <rect key="frame" x="140" y="120" width="134" height="30"/>
+                                                <state key="normal" title="Open Photo Library">
+                                                    <color key="titleColor" red="1" green="0.0" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="btPhotoAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wMr-DW-awr"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="NVh-SF-dcC" secondAttribute="trailing" id="16D-Gk-Gxi"/>
+                                    <constraint firstItem="NVh-SF-dcC" firstAttribute="leading" secondItem="PkP-lq-xlp" secondAttribute="leading" id="44i-up-APu"/>
+                                    <constraint firstItem="AhS-9r-Iu8" firstAttribute="top" secondItem="NVh-SF-dcC" secondAttribute="bottom" id="762-Sj-Kbb"/>
+                                    <constraint firstItem="NVh-SF-dcC" firstAttribute="top" secondItem="PkP-lq-xlp" secondAttribute="top" id="E2j-bZ-J57"/>
+                                    <constraint firstAttribute="bottom" secondItem="AhS-9r-Iu8" secondAttribute="bottom" id="UQP-be-qOE"/>
+                                    <constraint firstAttribute="bottom" secondItem="NVh-SF-dcC" secondAttribute="bottom" constant="150" id="fJU-3W-pcx"/>
+                                    <constraint firstItem="AhS-9r-Iu8" firstAttribute="leading" secondItem="PkP-lq-xlp" secondAttribute="leading" id="n6F-z6-1tL"/>
+                                    <constraint firstAttribute="trailing" secondItem="AhS-9r-Iu8" secondAttribute="trailing" id="vu7-n3-fTI"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ifb-KJ-1JT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="7U1-36-xt5"/>
+                            <constraint firstItem="PkP-lq-xlp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9pw-Tf-iES"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PkP-lq-xlp" secondAttribute="trailing" id="MT1-IB-ajL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="PkP-lq-xlp" secondAttribute="bottom" id="NXk-86-phz"/>
+                            <constraint firstItem="ifb-KJ-1JT" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="VhJ-SA-1gb"/>
+                            <constraint firstItem="PkP-lq-xlp" firstAttribute="top" secondItem="ifb-KJ-1JT" secondAttribute="bottom" id="brg-sp-DiO"/>
+                            <constraint firstItem="ifb-KJ-1JT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gJP-yQ-6fF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="btCamera" destination="PDk-oX-jQk" id="OfH-Is-zm5"/>
+                        <outlet property="btPhoto" destination="S97-CG-dsf" id="YkX-Qp-GQX"/>
+                        <outlet property="btSave" destination="RAd-vf-4g2" id="24a-Ad-7oS"/>
+                        <outlet property="imgView" destination="NVh-SF-dcC" id="3IZ-oL-idd"/>
+                        <outlet property="lbClassified" destination="UlD-Vh-T8J" id="9Zw-aH-gTs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="defaultimage" width="800" height="600"/>
+    </resources>
+</document>
